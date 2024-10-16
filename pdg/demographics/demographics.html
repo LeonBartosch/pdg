@@ -1,0 +1,83 @@
+
+
+{{ block styles }}
+
+<style>
+    td {
+        padding: 15px;
+        width: 150px;
+    }
+    .column {
+        text-align: center;
+    }
+    .column-label {
+        width: 300px;
+    }
+</style>
+
+{{ endblock }}
+{{ block content }}
+
+
+<p>
+    In the following, please answer a few questions about yourself.
+</p>
+
+{{ formfield 'age' }}<br>
+{{ formfield 'gender' }}<br>
+{{ formfield 'education' }}<br>
+<p>
+    Imagine that this picture of a ladder shows how your society is set up. <br>
+    At the top of the ladder are the people who have the highest standing in your society – they have the most money, the best education and the jobs that bring the most respect. At the bottom are people who have the lowest standing in your society – they have the least money, little or no education, no job or jobs that nobody wants or respects.<br>
+    Now think about yourself. Please select the number of the rung that shows where you think you would be on this ladder, and select it from the list below.<br>
+    <img src="{{ static 'SES.jpg' }}"/>
+</p>
+{{ formfield 'SES' }}<br>
+{{ formfield 'pol_orient' }}<br>
+
+<p>
+    In the following, we would like to know how much trust you have in local and national institutional authorities as well as in abstract institutions. Local institutional authorities are authorities you regularly interact with (e.g., public officials, police officers, council members etc.). National institutional authorities are, for instance, members of your national government or your prime minister. Abstract institutions are the legal system or the political system in your country.
+    <br><br>
+    Please rate your feelings of trust towards the following people and organisations using the scale below.
+</p>
+<table>
+    <tr>
+        <td></td>
+        <td class="column">1: Do not trust at all</td>
+        <td class="column">2</td>
+        <td class="column">3</td>
+        <td class="column">4</td>
+        <td class="column">5</td>
+        <td class="column">6</td>
+        <td class="column">7: Trust completely </td>
+    </tr>
+    <tr>
+        <td class="column-label">{{ form.local_institutional_authorities.label }}</td>
+        {{ for choice in form.local_institutional_authorities }}
+            <td class="column">{{ choice }}</td>
+        {{ endfor }}
+    </tr>
+    <tr>
+        <td class="column-label">{{ form.national_institutional_authorities.label }}</td>
+        {{ for choice in form.national_institutional_authorities }}
+            <td class="column">{{ choice }}</td>
+        {{ endfor }}
+    </tr>
+    <tr>
+        <td class="column-label">{{ form.national_legal_system.label }}</td>
+        {{ for choice in form.national_legal_system }}
+            <td class="column">{{ choice }}</td>
+        {{ endfor }}
+    </tr>
+    <tr>
+        <td class="column-label">{{ form.national_political_system.label }}</td>
+        {{ for choice in form.national_political_system }}
+            <td class="column">{{ choice }}</td>
+        {{ endfor }}
+    </tr>
+</table>
+<br>
+
+{{ next_button }}
+
+{{ endblock }}

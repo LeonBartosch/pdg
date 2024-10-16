@@ -1,0 +1,28 @@
+{{ block content }}
+<button type="button"  class=".otree-btn-next"  onclick="myFunction()">Instructions</button>
+
+<div id="instruction" style="display: none;">
+    Your bonus payment will be calculated in the following way: Bonus payment = 100 Talers (your initial endowment) minus amount you transferred to person B plus twice the amount Person B transferred to you<br>
+    <br>
+    For example: If you transfer 100 Talers to Person B and Person B transfers 0 Talers to you, your bonus will be:<br>
+    100<br>
+    – 100 (transfer to Person B)<br>
+    + 0 (transfer from Person B) x 2<br>
+    = 0<br>
+</div>
+
+{{ formfields }}
+{{ next_button }}
+
+<script>
+    function myFunction() {
+        let instructions = document.getElementById("instruction");
+        if (instructions.style.display === "none") {
+            instructions.style.display = "block";
+        } else {
+            instructions.style.display = "none";
+        }
+    }
+</script>
+
+{{ endblock }}

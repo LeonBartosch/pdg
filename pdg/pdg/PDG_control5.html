@@ -1,0 +1,29 @@
+{{ block content }}
+<button type="button"  class=".otree-btn-next" onclick="myFunction()">Instructions</button>
+
+<div id="instruction" style="display: none;">
+    If your estimation is correct, you will receive 400 bonus Talers. If it is incorrect, you will receive 200 Talers minus how much your estimate deviates from Person B’s actual behavior.<br>
+    <br>
+    For example: If you estimate that Person B transfers 100 Talers to you but Person B transferred 80 Talers to you, you will receive 180 bonus Talers.<br>
+    <br>
+    Calculation:<br>
+    200<br>
+    – 20 (estimation error)<br>
+    = 180 bonus Talers.<br>
+</div>
+
+{{ formfields }}
+{{ next_button }}
+
+<script>
+    function myFunction() {
+        let instructions = document.getElementById("instruction");
+        if (instructions.style.display === "none") {
+            instructions.style.display = "block";
+        } else {
+            instructions.style.display = "none";
+        }
+    }
+</script>
+
+{{ endblock }}
