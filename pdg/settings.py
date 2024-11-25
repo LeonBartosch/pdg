@@ -13,6 +13,18 @@ SESSION_CONFIGS = [
         ],
         num_demo_participants=1,
     ),
+    dict(
+        name='test_VC',
+        app_sequence=[
+            'introduction',
+            'pdg',
+            'probabilistic_payoff',
+            'weighted_payoff',
+            'prisoners_dilemma',
+            'demographics'
+        ],
+        num_demo_participants=1,
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
