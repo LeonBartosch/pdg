@@ -16,11 +16,6 @@ SESSION_CONFIGS = [
     dict(
         name='test_VC',
         app_sequence=[
-            'introduction',
-            'pdg',
-            'probabilistic_payoff',
-            'weighted_payoff',
-            'prisoners_dilemma',
             'demographics'
         ],
         num_demo_participants=1,
