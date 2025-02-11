@@ -25,8 +25,14 @@ class Player(BasePlayer):
 
 
 # PAGES
+class general_instruction(Page):
+    pass
+
 class instruction_weighted(Page):
     pass
 
 
-page_sequence = [instruction_weighted]
+page_sequence = [
+    general_instruction,
+    instruction_weighted
+]

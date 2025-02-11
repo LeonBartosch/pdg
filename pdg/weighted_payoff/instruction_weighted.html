@@ -1,5 +1,27 @@
-
 {{ block content }}
+
+    <p>You can earn a <b>bonus payment</b> based on the decisions you and the other participants make. Participants in this study are either <b>socially close</b> or <b>socially distant</b> to you. The social closeness between yourself and your interaction partner impacts your bonus payment:<br><br>
+        <ul>
+            <li>Interactions with <b>socially close</b> participants contribute more to your bonus:
+                <ul>
+                    <li style="list-style-type: circle;">Each close participant contributes <b>40%</b> (total 80%).</li>
+                </ul>
+            </li>
+            <li>Interactions with <b>socially distant</b> contribute less:
+                <ul>
+                    <li style="list-style-type: circle;">Each distant participant contributes <b>10%</b> (total 20%).</li>
+                </ul>
+            </li>
+            <li><b>Group membership</b> (blue / orange) <b>does not affect</b> how much participants contribute to your bonus.
+
+            </li>
+        </ul>
+
+        Hence, your total bonus will be calculated based on <b>all of these interactions</b>, with <b>socially closer participants</b> having a <b>greater impact</b> on your final bonus. <br><br>
+        The rules for the other players are the same, so that the Talers you send also have a greater impact on the bonus of close others as compared to distant others.<br><br>
+
+        <img src="{{ static 'wheighted_intro.png' }}"/><br><br>
+    </p>
 
     {{ next_button }}
 
