@@ -25,9 +25,15 @@ class Player(BasePlayer):
 
 
 # PAGES
+class general_instruction(Page):
+    pass
+
 class instruction_probabilistic(Page):
     pass
 
 
 
-page_sequence = [instruction_probabilistic]
+page_sequence = [
+    general_instruction,
+    instruction_probabilistic
+]

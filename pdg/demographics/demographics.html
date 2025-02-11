@@ -22,35 +22,8 @@
 
 
 <p>
-    In the following, please answer a few questions about yourself.
+    The decision-making task is now finished. In the following, please answer a few questions about yourself.
 </p>
-
-{{ formfield 'age' }}<br>
-{{ formfield 'gender' }}<br>
-{{ formfield 'education' }}<br>
-<p>
-    Imagine that this picture of a ladder shows how your society is set up. <br>
-    At the top of the ladder are the people who have the highest standing in your society – they have the most money, the best education and the jobs that bring the most respect. At the bottom are people who have the lowest standing in your society – they have the least money, little or no education, no job or jobs that nobody wants or respects.<br>
-    Now think about yourself. Please select the number of the rung that shows where you think you would be on this ladder, and select it from the list below.<br>
-    <img src="{{ static 'SES.jpg' }}"/>
-</p>
-{{ formfield 'SES' }}<br>
-
-{{ form.pol_orient.label }}
-<table>
-    <tr>
-        {{ for choice in form.pol_orient }}
-            <td class="column">{{ choice.label }}</td>
-        {{ endfor }}
-    </tr>
-    <tr>
-        {{ for choice in form.pol_orient }}
-            <td class="column">{{ choice }}</td>
-        {{ endfor }}
-    </tr>
-</table>
-<br>
-<br>
 
 <p>
     In the following, we would like to know how much trust you have in local and national institutional authorities as well as in abstract institutions. Local institutional authorities are authorities you regularly interact with (e.g., public officials, police officers, council members etc.). National institutional authorities are, for instance, members of your national government or your prime minister. Abstract institutions are the legal system or the political system in your country.
@@ -93,6 +66,39 @@
         {{ endfor }}
     </tr>
 </table>
+<br>
+
+{{ formfield 'age' }}<br>
+{{ formfield 'gender' }}<br>
+{{ formfield 'education' }}<br>
+<p>
+    Imagine that this picture of a ladder shows how your society is set up. <br>
+    At the top of the ladder are the people who have the highest standing in your society – they have the most money, the best education and the jobs that bring the most respect. At the bottom are people who have the lowest standing in your society – they have the least money, little or no education, no job or jobs that nobody wants or respects.<br>
+    Now think about yourself. Please select the number of the rung that shows where you think you would be on this ladder, and select it from the list below.<br>
+    <img src="{{ static 'SES.jpg' }}"/>
+</p>
+{{ formfield 'SES' }}<br>
+
+{{ form.pol_orient.label }}
+<table>
+    <tr>
+        {{ for choice in form.pol_orient }}
+            <td class="column">{{ choice.label }}</td>
+        {{ endfor }}
+    </tr>
+    <tr>
+        {{ for choice in form.pol_orient }}
+            <td class="column">{{ choice }}</td>
+        {{ endfor }}
+    </tr>
+</table>
+<br>
+<br>
+
+{{ formfield 'feedback' }}<br>
+<p>
+    Please click on the next button, to finish the survey and register your answers.
+</p>
 <br>
 
 {{ next_button }}

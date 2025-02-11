@@ -1,6 +1,28 @@
 
 {{ block content }}
 
+    <p>You can earn a <b>bonus payment</b> based on the decisions you and the other participants make. Only <b>one interaction</b> will be <b>randomly</b> selected to determine your bonus payment. The <b>social closeness</b> of each participant <b>influences the chance of a task</b> being chosen:<br>
+
+        <ul>
+            <li>Interactions with <b>socially close</b> participants have a <b>chance of 80%</b> to be selected for payment.
+                <ul>
+                    <li style="list-style-type: circle;">Each close participant has a 40% chance of being selected (total 80%).</li>
+                </ul>
+            </li>
+            <li>Interactions with <b>socially distant</b> participants have a <b>chance of 20%</b> to be selected for payment.
+                <ul>
+                    <li style="list-style-type: circle;">Each distant participant has a 10% chance of being selected (total 20%).</li>
+                </ul>
+            </li>
+        </ul>
+
+        So overall, your bonus will be determined by <b>one</b> of the choices you made. Choices with close others have a higher likelihood of being selected compared to choices with distant others.<br><br>
+        The rules for the other players are the same, so that the Talers you send also have a higher likelihood to be selected as bonus of close others as compared to distant others.<br><br>
+        In this example, the interaction with a close other from the blue group was randomly selected for payment.<br><br>
+
+        <img src="{{ static 'prob_intro.png' }}"/><br><br>
+    </p>
+
     {{ next_button }}
 
 {{ endblock }}

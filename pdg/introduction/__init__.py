@@ -32,7 +32,7 @@ class Player(BasePlayer):
 
 
 # PAGES
-class gen_info(Page):
+class gen_info_new(Page):
     pass
 
 class info_consent(Page):
@@ -48,9 +48,12 @@ class prolific_ID(Page):
     form_model = 'player'
     form_fields = ['prolific_ID']
 
+class study_overview(Page):
+    pass
 
 page_sequence = [
-    gen_info,
+    gen_info_new,
     info_consent,
-    prolific_ID
+    prolific_ID,
+    study_overview,
 ]

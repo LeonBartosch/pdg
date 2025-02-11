@@ -24,55 +24,28 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     PDG_control1 = models.IntegerField(
-        label='What is your bonus payment if you transfer 100 Talers to Person B and Person B also transfers 100 Talers to you?',
+        label='What is your bonus payment if you transfer 3 Talers to Person B and Person B also transfers 3 Talers to you?',
         choices=[
             [1, '0 Talers'],
-            [2, '100 Talers'],
-            [3, '200 Talers'],
-            [4, '300 Talers'],
+            [2, '4 Talers'],
+            [3, '8 Talers'],
+            [4, '12 Talers'],
         ],
         widget=widgets.RadioSelect
     )
     PDG_control2 = models.IntegerField(
-        label='What is your bonus payment if you transfer 0 Talers to Person B and Person B transfers 100 Talers to you?',
+        label='What is your bonus payment if you transfer 1 Taler to Person B and Person B transfers 4 Talers to you?',
         choices=[
             [1, '0 Talers'],
-            [2, '100 Talers'],
-            [3, '200 Talers'],
-            [4, '300 Talers'],
+            [2, '4 Talers'],
+            [3, '8 Talers'],
+            [4, '12 Talers'],
         ],
         widget=widgets.RadioSelect
     )
-    PDG_control3 = models.IntegerField(
-        label='What is your bonus payment if you transfer 100 Talers to Person B and Person B transfers 0 Talers to you?',
-        choices=[
-            [1, '0 Talers'],
-            [2, '100 Talers'],
-            [3, '200 Talers'],
-            [4, '300 Talers'],
-        ],
-        widget=widgets.RadioSelect
-    )
-    PDG_control4 = models.IntegerField(
-        label='What is your bonus payment if you transfer 0 Talers to Person B and Person B also transfers 0 Talers to you?',
-        choices=[
-            [1, '0 Talers'],
-            [2, '100 Talers'],
-            [3, '200 Talers'],
-            [4, '300 Talers'],
-        ],
-        widget=widgets.RadioSelect
-    )
-    PDG_control5 = models.IntegerField(
-        label='If you estimate that Person B transferred 40 Talers to you, how much would your bonus payment be if your estimation is incorrect and Person B actually transferred 30 Talers to you (given that the estimations determine your bonus payment)?',
-        choices=[
-            [1, '0 Talers'],
-            [2, '60 Talers'],
-            [3, '190 Talers'],
-            [4, '400 Talers'],
-        ],
-        widget=widgets.RadioSelect
-    )
+
+
+
 
 
 # PAGES
@@ -103,8 +76,6 @@ class PDG_intro8(Page):
 class PDG_intro9(Page):
     pass
 
-class PDG_intro10(Page):
-    pass
 
 class PDG_control1(Page):
     form_model = 'player'
@@ -124,32 +95,6 @@ class PDG_control2(Page):
         if values['PDG_control2'] != 4:
             return 'Please reconsider your answer.'
 
-class PDG_control3(Page):
-    form_model = 'player'
-    form_fields = ['PDG_control3']
-
-    @staticmethod
-    def error_message(player, values):
-        if values['PDG_control3'] != 1:
-            return 'Please reconsider your answer.'
-
-class PDG_control4(Page):
-    form_model = 'player'
-    form_fields = ['PDG_control4']
-
-    @staticmethod
-    def error_message(player, values):
-        if values['PDG_control4'] != 2:
-            return 'Please reconsider your answer.'
-
-class PDG_control5(Page):
-    form_model = 'player'
-    form_fields = ['PDG_control5']
-
-    @staticmethod
-    def error_message(player, values):
-        if values['PDG_control5'] != 3:
-            return 'Please reconsider your answer.'
 
 class PDG_done(Page):
     @staticmethod
@@ -157,7 +102,7 @@ class PDG_done(Page):
         import random
 
         player.participant.condition = random.choice(['weighted', 'probabilistic'])
-        player.participant.ingroup = random.choice(['blue', 'green'])
+        player.participant.ingroup = random.choice(['blue', 'orange'])
 
         if player.participant.condition == 'weighted':
             return "weighted_payoff"
@@ -175,11 +120,7 @@ page_sequence = [
     PDG_intro7,
     PDG_intro8,
     PDG_intro9,
-    PDG_intro10,
     PDG_control1,
     PDG_control2,
-    PDG_control3,
-    PDG_control4,
-    PDG_control5,
-    PDG_done,
+    PDG_done
 ]

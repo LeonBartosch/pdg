@@ -26,11 +26,12 @@ class Player(BasePlayer):
         min=18,max=99
     )
     gender = models.IntegerField(
-        label='Please indicate your gender.',
+        label='How do you describe yourself.',
         choices=[
             [0, 'Male'],
             [1, 'Female'],
-            [2, 'Diverse'],
+            [2, 'Non-binary / third gender'],
+            [3, 'Prefer not so say'],
         ],
         widget=widgets.RadioSelect
     )
@@ -97,12 +98,16 @@ class Player(BasePlayer):
         choices=[1,2,3,4,5,6,7],
         widget=widgets.RadioSelect
     )
+    feedback = models.LongStringField(
+        blank=True,
+        label="Finally, if you wish, you have the opportunity to express any thoughts about this survey."
+    )
 
 
 # PAGES
 class demographics(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender', 'education', 'SES', 'pol_orient', 'local_institutional_authorities', 'national_institutional_authorities', 'national_legal_system', 'national_political_system']
+    form_fields = ['age', 'gender', 'education', 'SES', 'pol_orient', 'local_institutional_authorities', 'national_institutional_authorities', 'national_legal_system', 'national_political_system', 'feedback']
 
 class debriefing(Page):
     pass
