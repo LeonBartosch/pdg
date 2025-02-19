@@ -1,0 +1,73 @@
+{{ block style }}
+
+<style>
+    td {
+        vertical-align: top;
+    }
+</style>
+
+{{ endblock }}
+
+{{ block content }}
+
+    Before beginning with the task, we want to ask you one final question to ensure that the task is correctly understood:
+    <br><br>
+    For the calculation of your own and your interaction partner’s bonus, the following statement apply:
+    <br><br>
+
+    <table>
+        <tr>
+            <td>
+                <input name="comprehension_check_1" type="checkbox" />
+            </td>
+            <td>
+                {{ form.comprehension_check_1.label }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="comprehension_check_2" type="checkbox" />
+            </td>
+            <td>
+                {{ form.comprehension_check_2.label }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="comprehension_check_3" type="checkbox" />
+            </td>
+            <td>
+                {{ form.comprehension_check_3.label }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="comprehension_check_4" type="checkbox" />
+            </td>
+            <td>
+                {{ form.comprehension_check_4.label }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="comprehension_check_5" type="checkbox" />
+            </td>
+            <td>
+                {{ form.comprehension_check_5.label }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="comprehension_check_6" type="checkbox" />
+            </td>
+            <td>
+                {{ form.comprehension_check_6.label }}
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    {{ next_button }}
+
+{{ endblock }}

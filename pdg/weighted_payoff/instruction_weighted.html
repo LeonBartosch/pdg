@@ -12,7 +12,7 @@
                     <li style="list-style-type: circle;">Each distant participant contributes <b>10%</b> (total 20%).</li>
                 </ul>
             </li>
-            <li><b>Group membership</b> (blue / orange) <b>does not affect</b> how much participants contribute to your bonus.
+            <li><b>Group membership</b> ({{ player.participant.color }}) <b>does not affect</b> how much participants contribute to your bonus.
 
             </li>
         </ul>
@@ -20,7 +20,7 @@
         Hence, your total bonus will be calculated based on <b>all of these interactions</b>, with <b>socially closer participants</b> having a <b>greater impact</b> on your final bonus. <br><br>
         The rules for the other players are the same, so that the Talers you send also have a greater impact on the bonus of close others as compared to distant others.<br><br>
 
-        <img src="{{ static 'wheighted_intro.png' }}"/><br><br>
+        <img style="width:100%" src="{{ static image_path }}"/><br><br>
     </p>
 
     {{ next_button }}

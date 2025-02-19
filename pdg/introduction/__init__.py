@@ -28,7 +28,6 @@ class Player(BasePlayer):
         ],
         widget=widgets.RadioSelect
     )
-    prolific_ID = models.StringField()
 
 
 # PAGES
@@ -44,16 +43,11 @@ class info_consent(Page):
         if values['consent'] == 0:
             return 'If you want to participate, you need to give your consent.'
 
-class prolific_ID(Page):
-    form_model = 'player'
-    form_fields = ['prolific_ID']
-
 class study_overview(Page):
     pass
 
 page_sequence = [
     gen_info_new,
     info_consent,
-    prolific_ID,
     study_overview,
 ]

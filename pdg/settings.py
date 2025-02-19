@@ -16,7 +16,8 @@ SESSION_CONFIGS = [
     dict(
         name='test_VC',
         app_sequence=[
-            'demographics'
+            'pdg',
+            'prisoners_dilemma'
         ],
         num_demo_participants=1,
     ),
@@ -31,7 +32,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = ['condition', 'ingroup']
+PARTICIPANT_FIELDS = ['condition', 'color', 'order']
 SESSION_FIELDS = []
 
 # ISO-639 code

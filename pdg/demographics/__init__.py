@@ -102,6 +102,7 @@ class Player(BasePlayer):
         blank=True,
         label="Finally, if you wish, you have the opportunity to express any thoughts about this survey."
     )
+    prolific_ID = models.StringField()
 
 
 # PAGES
@@ -109,11 +110,16 @@ class demographics(Page):
     form_model = 'player'
     form_fields = ['age', 'gender', 'education', 'SES', 'pol_orient', 'local_institutional_authorities', 'national_institutional_authorities', 'national_legal_system', 'national_political_system', 'feedback']
 
+class prolific_ID(Page):
+    form_model = 'player'
+    form_fields = ['prolific_ID']
+
 class debriefing(Page):
     pass
 
 
 page_sequence = [
     demographics,
+    prolific_ID,
     debriefing
 ]

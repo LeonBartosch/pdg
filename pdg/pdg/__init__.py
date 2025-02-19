@@ -102,7 +102,9 @@ class PDG_done(Page):
         import random
 
         player.participant.condition = random.choice(['weighted', 'probabilistic'])
-        player.participant.ingroup = random.choice(['blue', 'orange'])
+        player.participant.color = random.choice(['blue', 'orange'])
+        player.participant.order = [0, 1, 2, 3]
+        random.shuffle(player.participant.order)
 
         if player.participant.condition == 'weighted':
             return "weighted_payoff"
