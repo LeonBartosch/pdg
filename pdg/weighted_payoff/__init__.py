@@ -58,7 +58,7 @@ class comprehension_check(Page):
     def error_message(player, values):
         if not (values['comprehension_check_1'] and not values['comprehension_check_2'] and not values['comprehension_check_3'] and not values['comprehension_check_4'] and values['comprehension_check_5'] and not values['comprehension_check_6']):
             player.comprehension_check_counter = player.comprehension_check_counter + 1
-            return 'Please reconsider your answer. Remember that <br> - Socially close others impact your bonus payment more. <br> - Group membership does not matter. <br> - Rules apply for the other person as well.'
+            return 'Please reconsider your answer. Remember that <br> - Socially close others impact your bonus payment more than socially distant others. <br> - Group membership does not impact your bonus payment. <br> - Rules apply for the other person as well.'
 
 
 page_sequence = [
