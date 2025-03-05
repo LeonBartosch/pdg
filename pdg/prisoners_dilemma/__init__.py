@@ -34,7 +34,7 @@ class Player(BasePlayer):
         widget=RadioSelectHorizontal
     )
     MC_main = models.IntegerField(
-        label="How strongly do you feel that your outcomes depend on the choices of the other person?",
+        label="How strongly do you feel that your outcomes depend on the choices of the other person B?",
         choices=[
             [1, '1 - Not at all'],
             [2, '2 - Slightly'],
@@ -45,7 +45,7 @@ class Player(BasePlayer):
         widget=RadioSelect
     )
     MC_expl = models.IntegerField(
-        label="How socially close do you feel to the other person in the context of this study?",
+        label="How socially close do you feel to the other person B in the context of this study?",
         choices=[
             [1, '1 - Not at all'],
             [2, '2 - Slightly'],
