@@ -118,19 +118,21 @@ class prolific_ID(Page):
     form_fields = ['prolific_ID']
 
 class debriefing(Page):
+    pass
+
+
+class redirect_prolific(Page):
     form_model = 'player'
 
     @staticmethod
+    def is_displayed(player):
+        return True  # Zeige die Seite allen Teilnehmern
+
+    @staticmethod
     def js_vars(player):
-        # Hier wird die URL für den Redirect gesetzt, wenn der Next-Button gedrückt wird.
         return dict(
-            completionlink=player.subsession.session.config['completionlink']
+            completionlink=player.session.config.get('completionlink', 'https://app.prolific.com')  # Fallback-URL
         )
-
-    def before_next_page(player, timeout_happened):
-        pass
-
-class redirect_prolific(Page):
     pass
 
 

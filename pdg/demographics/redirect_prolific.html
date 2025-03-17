@@ -1,0 +1,12 @@
+{{ block content }}
+
+    <script>
+        let completionlink = js_vars.completionlink;
+
+        // Automatische Weiterleitung nach einer kurzen Verzögerung
+        window.onload = function() {
+            window.location.href = completionlink;
+        };
+    </script>
+
+{{ endblock }}
