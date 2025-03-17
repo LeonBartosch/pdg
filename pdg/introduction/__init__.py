@@ -28,6 +28,11 @@ class Player(BasePlayer):
         ],
         widget=widgets.RadioSelect
     )
+    prolific_id = models.StringField(default=str(" "))
+
+    @staticmethod
+    def before_next_page(player, timeout_happened):
+        player.prolific_id = player.participant.label
 
 
 # PAGES
@@ -46,8 +51,12 @@ class info_consent(Page):
 class study_overview(Page):
     pass
 
+class bonus_info(Page):
+    pass
+
 page_sequence = [
     gen_info_new,
     info_consent,
     study_overview,
+    bonus_info,
 ]

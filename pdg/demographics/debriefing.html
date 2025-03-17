@@ -7,8 +7,25 @@
         Any rewards and bonuses will be credited in your account through Prolific within one month (maximum) after finishing the study. <br><br>
         Thanks again for participating, and have a nice day! <br><br>
         Please click on the next button, to finish the survey.
-    </p>
 
-    {{ next_button }}
 
-{{ endblock }}
+         <script>
+        let completionlink = js_vars.completionlink;
+
+        // Funktion zur Weiterleitung nach dem Drücken des Next-Buttons
+        function redirectToProlific() {
+            window.location.href = completionlink;  // Teilnehmer wird zur Prolific-Seite weitergeleitet
+        }
+
+        // Automatische Weiterleitung zur Prolific-Seite nach Klick auf "Next"
+        document.querySelector('.next').onclick = function() {
+            setTimeout(function() {
+                redirectToProlific();
+            }, 5000);  // 5 Sekunden warten, bevor weitergeleitet wird
+        }
+    </script>
+
+
+        {{ next_button }}
+        {% endblock %}
+

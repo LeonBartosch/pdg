@@ -111,17 +111,33 @@ class Player(BasePlayer):
 class demographics(Page):
     form_model = 'player'
     form_fields = ['age', 'gender', 'education', 'SES', 'pol_orient', 'local_institutional_authorities', 'national_institutional_authorities', 'national_legal_system', 'national_political_system', 'feedback']
+    pass
 
 class prolific_ID(Page):
     form_model = 'player'
     form_fields = ['prolific_ID']
 
 class debriefing(Page):
+    form_model = 'player'
+
+    @staticmethod
+    def js_vars(player):
+        # Hier wird die URL für den Redirect gesetzt, wenn der Next-Button gedrückt wird.
+        return dict(
+            completionlink=player.subsession.session.config['completionlink']
+        )
+
+    def before_next_page(player, timeout_happened):
+        pass
+
+class redirect_prolific(Page):
     pass
+
 
 
 page_sequence = [
     demographics,
     prolific_ID,
-    debriefing
+    debriefing,
+    redirect_prolific,
 ]

@@ -1,5 +1,13 @@
 from os import environ
 
+ROOMS = [
+    dict(
+        name='prolific',
+        display_name='Prolific Study',
+        # use_secure_urls=True,  # Falls du sichere Links nutzen willst
+    ),
+]
+
 SESSION_CONFIGS = [
     dict(
         name='pdg',
@@ -12,14 +20,8 @@ SESSION_CONFIGS = [
             'demographics'
         ],
         num_demo_participants=1,
-    ),
-    dict(
-        name='test_VC',
-        app_sequence=[
-            'pdg',
-            'prisoners_dilemma'
-        ],
-        num_demo_participants=1,
+        completionlink=
+        'https://app.prolific.com/submissions/complete?cc=CCFT75WO',
     ),
 ]
 
