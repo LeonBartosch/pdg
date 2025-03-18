@@ -102,7 +102,7 @@ class Player(BasePlayer):
         blank=True,
         label="Finally, if you wish, you have the opportunity to express any thoughts about this survey."
     )
-    prolific_ID = models.StringField(
+    prolific_ID_copy = models.StringField(
         label="Please enter your Prolific ID."
     )
 
