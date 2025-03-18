@@ -115,7 +115,7 @@ class demographics(Page):
 
 class prolific_ID(Page):
     form_model = 'player'
-    form_fields = ['prolific_ID']
+    form_fields = ['prolific_ID_copy']
 
 class debriefing(Page):
     pass
