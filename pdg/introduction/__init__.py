@@ -30,9 +30,7 @@ class Player(BasePlayer):
     )
     prolific_id = models.StringField(default=str(" "))
 
-    @staticmethod
-    def before_next_page(player, timeout_happened):
-        player.prolific_id = player.participant.label
+
 
 
 # PAGES
@@ -49,7 +47,15 @@ class info_consent(Page):
             return 'If you want to participate, you need to give your consent.'
 
 class study_overview(Page):
+    form_model = 'player'
+
+    @staticmethod
+    def before_next_page(player, timeout_happened):
+        player.prolific_id = player.participant.label
+
     pass
+
+
 
 class bonus_info(Page):
     pass
